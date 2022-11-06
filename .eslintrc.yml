@@ -6,9 +6,8 @@ extends:
   - plugin:react/recommended
   - plugin:@typescript-eslint/recommended
   - plugin:react-hooks/recommended
-  - unused-imports
   - prettier
-parser: '@typescript-eslint/parser'
+parser: "@typescript-eslint/parser"
 parserOptions:
   ecmaFeatures:
     jsx: true
@@ -16,5 +15,9 @@ parserOptions:
   sourceType: module
 plugins:
   - react
-  - '@typescript-eslint'
-rules: {}
+  - "@typescript-eslint"
+  - unused-imports
+rules:
+  react/jsx-uses-react: off
+  react/jsx-uses-vars: off
+  react/react-in-jsx-scope: off
