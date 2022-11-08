@@ -1,24 +1,24 @@
 import { useState } from "react";
 import { getBucket } from "@extend-chrome/storage";
 
-interface Store {
+interface MyBucket {
   point: number;
   person: string;
   color: string;
   name: string;
 }
 
-const store = getBucket<Store>("store");
+const bucket = getBucket<MyBucket>("my-bucket");
 
 function App() {
   const [count, setCount] = useState(0);
 
   const saveCount = () => {
-    store.set({ point: count, person: "eetann", color: "green" });
+    bucket.set({ point: count, person: "eetann", color: "green" });
   };
 
   const loadCount = async () => {
-    const value = await store.get();
+    const value = await bucket.get();
     setCount(value.point);
   };
 
